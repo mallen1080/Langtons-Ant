@@ -9,7 +9,7 @@ var Board = LangtonsAnt.board = function (options) {
   this.borderSize = 1;
   this.ants = [];
   this.grid = [];
-  this.colors = ["#00004d"];
+  this.colors = ["#00004d","#ccccff"];
   this.ctx = options.ctx;
   this.generateGrid();
 };
