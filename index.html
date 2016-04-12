@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+  </head>
+
+  <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script src="./ant.js"></script>
+    <script src="./board.js"></script>
+    <script src="./view.js"></script>
+    <canvas id="canvas"></canvas>
+    <script>
+      $(function () {
+        var canvas = $("#canvas")[0];
+        var ctx = canvas.getContext("2d");
+        canvas.width = 880;
+        canvas.height = 660;
+        var board = new LangtonsAnt.board({numX: 80, numY: 60, ctx: ctx})
+        new LangtonsAnt.View(board);
+        // ctx.fillStyle = "#00004d";
+        // ctx.fillRect(0,0, 800, 600);
+      })
+    </script>
+  </body>
+</html>
