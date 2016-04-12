@@ -24,4 +24,6 @@ View.prototype.handleClick = function () {
   this.board.addAnt(location);
 };
 
+
+
 })();

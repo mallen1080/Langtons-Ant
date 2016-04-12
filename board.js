@@ -23,7 +23,6 @@ var Board = LangtonsAnt.Board = function (options) {
   this.colors = colors;
   this.ctx = options.ctx;
   this.generateGrid();
-  // this.addAnt([30,40]);
 };
 
 Board.prototype.generateGrid = function () {
