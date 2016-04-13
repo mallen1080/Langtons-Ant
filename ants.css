@@ -35,8 +35,14 @@ canvas {
   width: 160px;
   padding: 15px;
   margin: 10px;
+  border: 1px solid transparent;
   background-color: orange;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.game button:hover {
+  border: 1px solid black;
 }
 
 .colors-speed {
@@ -51,9 +57,26 @@ canvas {
 
 #color-radios label {
   margin: 20px;
+  /*border: 1px solid black;*/
 }
 
 .speed {
   float: right;
   /*margin-top: 15px;*/
+}
+
+#start {
+  background-color: #00cc00;
+}
+
+#pause {
+  background-color: #ff3300;
+}
+
+#step {
+  background-color: #ffff4d;
+}
+
+#reset {
+  background-color: #7070db;
 }
