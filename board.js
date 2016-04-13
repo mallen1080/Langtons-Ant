@@ -3,7 +3,7 @@
 var LangtonsAnt = window.LangtonsAnt = window.LangtonsAnt || {};
 
 var colors = [
-  "#333333", //lightblue
+  "#333333", //darkgrey
   "#ff0000", //red
   "#ff9900", //orange
   "#ffff00", //yellow
@@ -14,6 +14,7 @@ var colors = [
 ];
 
 var Board = LangtonsAnt.Board = function (options) {
+  this.ctx = options.ctx;
   this.numX = options.numX;
   this.numY = options.numY;
   this.cellSize = 10;
@@ -21,7 +22,9 @@ var Board = LangtonsAnt.Board = function (options) {
   this.ants = [];
   this.grid = [];
   this.colors = colors;
-  this.ctx = options.ctx;
+  this.numColors = 2;
+  this.active = false;
+  this.speed = 32;
   this.generateGrid();
 };
 
@@ -35,7 +38,9 @@ Board.prototype.generateGrid = function () {
 Board.prototype.draw = function () {
   var that = this;
   that.ctx.fillStyle = "#000";
-  that.ctx.fillRect(0,0, 880, 660);
+  that.ctx.fillRect(0,0,
+    this.numX * (this.cellSize + this.borderSize),
+    this.numY * (this.cellSize + this.borderSize));
 
   this.grid.forEach(function (row, i) {
     row.forEach(function (cell, j) {
@@ -48,6 +53,8 @@ Board.prototype.draw = function () {
 
 Board.prototype.addAnt = function (location) {
   var newAnt = new LangtonsAnt.Ant({location: location, board: this});
+  newAnt.step();
+  this.draw();
   this.ants.push(newAnt);
 };
 

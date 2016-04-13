@@ -18,12 +18,12 @@ Ant.prototype.step = function () {
     return;
   }
 
-  var oldCell = this.board.grid[this.location[0]][this.location[1]];
-  this.board.grid[this.location[0]][this.location[1]] = (oldCell + 1) %
-    this.board.colors.length;
+  var oldColor = this.board.grid[this.location[0]][this.location[1]];
+  this.board.grid[this.location[0]][this.location[1]] = (oldColor + 1) %
+    this.board.numColors;
 
     this.direction.reverse();
-  if (oldCell % 2 === 0) {
+  if (oldColor % 2 === 0) {
     if (this.direction[0] === 0) {
       this.direction[1] *= -1;
     }

@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>
-    </title>
+    <title>Langton's Ants</title>
+    <link rel="stylesheet" href="ants.css">
   </head>
 
   <body>
@@ -12,16 +12,45 @@
     <script src="./ant.js"></script>
     <script src="./board.js"></script>
     <script src="./view.js"></script>
+    <script src="./buttons.js"></script>
+
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="reset">Reset</button>
+    <button id="step">Step</button>
+    <button id="random">Random Ant</button>
+    <button id="border">Toggle Border</button>
+
+    <form id="color-radios">
+      <label>Two Color
+        <input type="radio"
+              name="colors"
+              value="two"
+              checked="checked" />
+      </label></br>
+
+      <label>Multi-Color
+        <input type="radio"
+              name="colors"
+              value="multi" />
+      </label>
+    </form>
+
+    <label>Speed
+      <input type="range" id="speed" min="1" max="1000" step="1" value="500" />
+    </label>
+
     <canvas id="canvas"></canvas>
     <script>
       $(function () {
         var canvas = $("#canvas")[0];
         var ctx = canvas.getContext("2d");
         canvas.width = 880;
-        canvas.height = 660;
-        var board = new LangtonsAnt.Board({numX: 80, numY: 60, ctx: ctx})
+        canvas.height = 550;
+        var board = new LangtonsAnt.Board({numX: 80, numY: 50, ctx: ctx})
         new LangtonsAnt.View(board);
-        window.setInterval(board.step.bind(board), 1);
+        new LangtonsAnt.Buttons(board);
+
 
       })
     </script>
