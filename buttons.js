@@ -53,6 +53,7 @@ Buttons.prototype.resetBoard = function () {
   this.pauseBoard();
   this.board.ants = [];
   this.board.grid = [];
+  this.board.stepCount = 0;
   this.board.generateGrid();
   this.board.draw();
 };

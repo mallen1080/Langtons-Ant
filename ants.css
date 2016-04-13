@@ -48,14 +48,14 @@ canvas {
   width: 170px;
   padding: 15px;
   margin: 10px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-color: orange;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .game button:hover {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .colors-speed {
