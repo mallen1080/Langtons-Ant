@@ -61,10 +61,13 @@ Board.prototype.addAnt = function (location) {
 };
 
 Board.prototype.step = function () {
+  var active = false;
   this.ants.forEach(function (ant) {
+    if (ant.active) { active = true; }
     ant.step();
   });
-  this.stepCount += 1;
+  if (active) { this.stepCount += 1; }
+
   this.draw();
 };
 
