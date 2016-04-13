@@ -25,6 +25,7 @@ var Board = LangtonsAnt.Board = function (options) {
   this.numColors = 2;
   this.active = false;
   this.speed = 32;
+  this.stepCount = 0;
   this.generateGrid();
 };
 
@@ -49,6 +50,7 @@ Board.prototype.draw = function () {
         (i * (that.cellSize + that.borderSize)), that.cellSize, that.cellSize);
     });
   });
+  $(".count").text(this.stepCount);
 };
 
 Board.prototype.addAnt = function (location) {
@@ -62,6 +64,7 @@ Board.prototype.step = function () {
   this.ants.forEach(function (ant) {
     ant.step();
   });
+  this.stepCount += 1;
   this.draw();
 };
 

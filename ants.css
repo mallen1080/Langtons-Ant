@@ -73,8 +73,14 @@ canvas {
   /*border: 1px solid black;*/
 }
 
-.speed {
+.colors-speed #count {
+  width: 150px;
   float: right;
+}
+
+.speed {
+  float: left;
+  margin-left: 60px;
   /*margin-top: 15px;*/
 }
 
