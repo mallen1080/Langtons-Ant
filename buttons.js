@@ -9,6 +9,7 @@ var Buttons = LangtonsAnt.Buttons = function (board) {
   this.$reset = $("#reset");
   this.$step = $("#step");
   this.$random = $("#random");
+  this.$square = $("#square");
   this.$border = $("#border");
   this.$radios = $("#color-radios input");
   this.$speed = $("#speed");
@@ -21,6 +22,7 @@ Buttons.prototype.bindEvents = function () {
   this.$reset.click(this.resetBoard.bind(this));
   this.$step.click(this.stepBoard.bind(this));
   this.$random.click(this.randomAnt.bind(this));
+  this.$square.click(this.expandingSquare.bind(this));
   this.$border.click(this.toggleBorder.bind(this));
   this.$radios.change(this.changeColors.bind(this));
   this.$speed.on("input", this.changeSpeed.bind(this));
@@ -81,6 +83,13 @@ Buttons.prototype.changeSpeed = function (e) {
   }
 };
 
+Buttons.prototype.expandingSquare = function () {
+  this.resetBoard();
+  this.board.addAnt([25,40]);
+  this.board.addAnt([25,41]);
+  this.startBoard();
+};
+
 Buttons.prototype.toggleBorder = function () {
   if (this.board.cellSize === 10) {
     this.board.cellSize = 11;
@@ -89,7 +98,7 @@ Buttons.prototype.toggleBorder = function () {
     this.board.cellSize = 10;
     this.board.borderSize = 1;
   }
-  
+
   this.board.draw();
 };
 
