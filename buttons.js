@@ -10,6 +10,7 @@ var Buttons = LangtonsAnt.Buttons = function (board) {
   this.$step = $("#step");
   this.$random = $("#random");
   this.$square = $("#square");
+  this.$drop = $("#drop");
   this.$border = $("#border");
   this.$radios = $("#color-radios input");
   this.$speed = $("#speed");
@@ -23,6 +24,7 @@ Buttons.prototype.bindEvents = function () {
   this.$step.click(this.stepBoard.bind(this));
   this.$random.click(this.randomAnt.bind(this));
   this.$square.click(this.expandingSquare.bind(this));
+  this.$drop.click(this.rainDrop.bind(this));
   this.$border.click(this.toggleBorder.bind(this));
   this.$radios.change(this.changeColors.bind(this));
   this.$speed.on("input", this.changeSpeed.bind(this));
@@ -87,6 +89,15 @@ Buttons.prototype.expandingSquare = function () {
   this.resetBoard();
   this.board.addAnt([25,40]);
   this.board.addAnt([25,41]);
+  this.startBoard();
+};
+
+Buttons.prototype.rainDrop = function () {
+  this.resetBoard();
+  this.board.addAnt([1,40]);
+  this.board.addAnt([1,41]);
+  this.board.addAnt([2,40]);
+  this.board.addAnt([2,41]);
   this.startBoard();
 };
 
