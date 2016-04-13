@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Langton's Ants</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="ants.css">
   </head>
 
@@ -14,35 +15,42 @@
     <script src="./view.js"></script>
     <script src="./buttons.js"></script>
 
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
-    <button id="reset">Reset</button>
-    <button id="step">Step</button>
-    <button id="random">Random Ant</button>
-    <button id="square">Expanding Squre</button>
-    <button id="drop">Rain Drop</button>
-    <button id="border">Toggle Border</button>
+    <div class="game">
+      <div class="buttons">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="step">Step</button>
+        <button id="reset">Reset</button>
+        </br>
+        <button id="random">Random Ant</button>
+        <button id="square">Expanding Squre</button>
+        <button id="drop">Rain Drop</button>
+        <button id="border">Toggle Border</button>
+      </div>
 
-    <form id="color-radios">
-      <label>Basic
-        <input type="radio"
-              name="colors"
-              value="two"
-              checked="checked" />
-      </label></br>
+      <div class="colors-speed group">
+        <form id="color-radios">
+          <label>Basic
+            <input type="radio"
+                  name="colors"
+                  value="two"
+                  checked="checked" />
+          </label>
 
-      <label>Multi-Color
-        <input type="radio"
-              name="colors"
-              value="multi" />
-      </label>
-    </form>
+          <label>Multi-Color
+            <input type="radio"
+                  name="colors"
+                  value="multi" />
+          </label>
+        </form>
 
-    <label>Speed
-      <input type="range" id="speed" min="1" max="1000" step="1" value="500" />
-    </label>
+        <label class="speed">Speed
+          <input type="range" id="speed" min="1" max="1000" step="1" value="500" />
+        </label>
+      </div>
 
-    <canvas id="canvas"></canvas>
+      <canvas id="canvas"></canvas>
+    </div>
     <script>
       $(function () {
         var canvas = $("#canvas")[0];
