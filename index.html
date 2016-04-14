@@ -15,59 +15,61 @@
     <script src="./view.js"></script>
     <script src="./buttons.js"></script>
 
-    <div class="heading">
-      <h1>Langton's Ant</h1>
-      <p>Langton's Ant is a two-dimentional turing machine, invented by
-        Chris Langton in 1986.  An ant starts in the middle of a grid and each
-        "step" switches it's current square's color, and moves to a new square
-        based on two rules:</p>
-      <ul>
-        <li>at a light square, turn 90° right and move forward 1 square</li>
-        <li>at a dark square, turn 90° left and move forward 1 square</li>
-      </ul>
-      <p>This visualization allows for multiple ants at a time, and includes a
-        multi-color option, where a square's color value alternates with each color change.
-        More information at: <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">
-        Langton's Ant</a></p>
-    </div>
-
-    <div class="game">
-      <div class="buttons">
-        <button id="start">Start</button>
-        <button id="pause">Pause</button>
-        <button id="step">Step</button>
-        <button id="reset">Reset</button>
-        </br>
-        <button id="random">Random Ant</button>
-        <button id="square">Expanding Square</button>
-        <button id="drop">Rain Drop</button>
-        <button id="border">Toggle Border</button>
+    <div class="main">
+      <div class="heading">
+        <h1>Langton's Ant</h1>
+        <p>Langton's Ant is a two-dimentional turing machine, invented by
+          Chris Langton in 1986.  An ant starts in the middle of a grid and each
+          "step" switches it's current square's color, and moves to a new square
+          based on two rules:</p>
+        <ul>
+          <li>at a light square, turn 90° right and move forward 1 square</li>
+          <li>at a dark square, turn 90° left and move forward 1 square</li>
+        </ul>
+        <p>This visualization allows for multiple ants at a time, and includes a
+          multi-color option, where a square's color value alternates with each color change.
+          More information at: <a href="https://en.wikipedia.org/wiki/Langton%27s_ant">
+          Langton's Ant</a></p>
       </div>
 
-      <div class="colors-speed group">
-        <form id="color-radios">
-          <label>Basic
-            <input type="radio"
-                  name="colors"
-                  value="two"
-                  checked="checked" />
+      <div class="game">
+        <div class="buttons">
+          <button id="start">Start</button>
+          <button id="pause">Pause</button>
+          <button id="step">Step</button>
+          <button id="reset">Reset</button>
+          </br>
+          <button id="random">Random Ant</button>
+          <button id="square">Expanding Square</button>
+          <button id="drop">Rain Drop</button>
+          <button id="border">Toggle Border</button>
+        </div>
+
+        <div class="colors-speed group">
+          <form id="color-radios">
+            <label>Basic
+              <input type="radio"
+                    name="colors"
+                    value="two"
+                    checked="checked" />
+            </label>
+
+            <label>Multi-Color
+              <input type="radio"
+                    name="colors"
+                    value="multi" />
+            </label>
+          </form>
+
+          <label class="speed">Speed
+            <input type="range" id="speed" min="1" max="1000" step="1" value="500" />
           </label>
 
-          <label>Multi-Color
-            <input type="radio"
-                  name="colors"
-                  value="multi" />
-          </label>
-        </form>
+          <div id="count"><span>Step count: </span><span class="count"><span></div>
+        </div>
 
-        <label class="speed">Speed
-          <input type="range" id="speed" min="1" max="1000" step="1" value="500" />
-        </label>
-
-        <div id="count"><span>Step count: </span><span class="count"><span></div>
+        <canvas id="canvas"></canvas>
       </div>
-
-      <canvas id="canvas"></canvas>
     </div>
     <script>
       $(function () {
