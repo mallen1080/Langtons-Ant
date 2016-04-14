@@ -22,6 +22,9 @@ body {
 .main {
   width: 1000px;
   margin: auto;
+  /*background: url('https://www.proofpest.com/wp-content/uploads/2014/12/ant-trail.jpg');*/
+  /*background-size: 200px;*/
+  /*background-repeat: no-repeat;*/
 }
 
 .game {
@@ -34,10 +37,11 @@ body {
 
 .heading {
   width: 700px;
+  /*background: url('./ants2.jpg');
+  background-size: 200px;
+  background-repeat: no-repeat;*/
+  /*https://www.proofpest.com/wp-content/uploads/2014/12/ant-trail.jpg*/
   margin: auto;
-  background: url('./ants2.jpg');
-  background-size: 100px;
-  background-repeat: no-repeat;
 }
 
 .heading h1 {
@@ -52,6 +56,13 @@ canvas {
 .buttons {
   width: 100%;
   text-align: center;
+}
+
+.buttons img {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 140px;
+  left: 70px;
 }
 
 .game button {
