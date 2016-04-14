@@ -38,10 +38,6 @@ body {
 
 .heading {
   width: 700px;
-  /*background: url('./ants2.jpg');
-  background-size: 200px;
-  background-repeat: no-repeat;*/
-  /*https://www.proofpest.com/wp-content/uploads/2014/12/ant-trail.jpg*/
   margin: auto;
 }
 
@@ -127,3 +123,5 @@ canvas {
 #reset {
   background-color: #7070db;
 }
+
+/*ant link: https://mseap.wikispaces.com/file/view/ant.png/109286177/209x209/ant.png*/
