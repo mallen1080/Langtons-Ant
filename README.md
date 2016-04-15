@@ -15,5 +15,5 @@ Experience at: [Langton's Ant][link]
 ![menu]
 ![action]
 
-[menu]: ./assest/images/menu_ss.png
-[action]: ./assest/images/action_ss.png
+[menu]: ./assets/images/menu_ss.png
+[action]: ./assets/images/action_ss.png
