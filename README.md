@@ -10,10 +10,20 @@ Experience at: [Langton's Ant][link]
 
 ### Technologies Used
 - Javascript
-- HHTML Canvas
+- HTML Canvas
 
+### Intro and menu
 ![menu]
+
+### With multiple active ants
 ![action]
 
 [menu]: ./assets/images/menu_ss.png
 [action]: ./assets/images/action_ss.png
+[speed_change]: ./assets/images/speed_change.png
+
+### Speed change
+
+Input from speed slider is remapped so that the speed visualization is a better representation of its position on the slider.
+
+![speed_change]
