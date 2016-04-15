@@ -12,7 +12,7 @@
     </script>
     <script src="./ant.js"></script>
     <script src="./board.js"></script>
-    <script src="./view.js"></script>
+    <script src="./events.js"></script>
 
     <div class="main">
       <div class="heading">
@@ -78,7 +78,7 @@
         canvas.width = 880;
         canvas.height = 550;
         var board = new LangtonsAnt.Board({numX: 80, numY: 50, ctx: ctx})
-        new LangtonsAnt.View(board);
+        new LangtonsAnt.Events(board);
       })
     </script>
   </body>

@@ -2,7 +2,7 @@
 
 var LangtonsAnt = window.LangtonsAnt = window.LangtonsAnt || {};
 
-var View = LangtonsAnt.View = function (board) {
+var Events = LangtonsAnt.Events = function (board) {
   this.board = board;
   this.canvas = $("#canvas")[0];
   this.$start = $("#start");
@@ -18,7 +18,7 @@ var View = LangtonsAnt.View = function (board) {
   this.bindEvents();
 };
 
-View.prototype.bindEvents = function () {
+Events.prototype.bindEvents = function () {
   $(this.canvas).click(this.canvasClick.bind(this));
   this.$start.click(this.startBoard.bind(this));
   this.$pause.click(this.pauseBoard.bind(this));
@@ -32,7 +32,7 @@ View.prototype.bindEvents = function () {
   this.$speed.on("input", this.changeSpeed.bind(this));
 };
 
-View.prototype.canvasClick = function () {
+Events.prototype.canvasClick = function () {
   var canvasDims = this.canvas.getBoundingClientRect();
   var pixCoords = {
     x: event.clientX - canvasDims.left,
@@ -44,7 +44,7 @@ View.prototype.canvasClick = function () {
   this.board.addAnt(location);
 };
 
-View.prototype.startBoard = function () {
+Events.prototype.startBoard = function () {
   if (!this.board.active) {
     if (this.board.ants.length === 0) {
       this.board.addAnt([25,40]);
@@ -56,14 +56,14 @@ View.prototype.startBoard = function () {
   }
 };
 
-View.prototype.pauseBoard = function () {
+Events.prototype.pauseBoard = function () {
   if (this.board.active) {
     window.clearInterval(this.start);
     this.board.active = false;
   }
 };
 
-View.prototype.resetBoard = function () {
+Events.prototype.resetBoard = function () {
   this.pauseBoard();
   this.board.ants = [];
   this.board.grid = [];
@@ -72,18 +72,18 @@ View.prototype.resetBoard = function () {
   this.board.draw();
 };
 
-View.prototype.stepBoard = function () {
+Events.prototype.stepBoard = function () {
  this.pauseBoard();
  this.board.step();
 };
 
-View.prototype.randomAnt = function () {
+Events.prototype.randomAnt = function () {
   var x = Math.floor(Math.random() * this.board.numX);
   var y = Math.floor(Math.random() * this.board.numY);
   this.board.addAnt([y, x]);
 };
 
-View.prototype.changeColors = function (e) {
+Events.prototype.changeColors = function (e) {
   if (e.target.value == "two") {
     this.board.numColors = 2;
   } else {
@@ -91,7 +91,7 @@ View.prototype.changeColors = function (e) {
   }
 };
 
-View.prototype.changeSpeed = function (e) {
+Events.prototype.changeSpeed = function (e) {
   this.board.speed = Math.pow(1000, e.target.value / 1000);
   var prevState = this.board.active;
   if (prevState) {
@@ -100,14 +100,14 @@ View.prototype.changeSpeed = function (e) {
   }
 };
 
-View.prototype.expandingSquare = function () {
+Events.prototype.expandingSquare = function () {
   this.resetBoard();
   this.board.addAnt([25,40]);
   this.board.addAnt([25,41]);
   this.startBoard();
 };
 
-View.prototype.rainDrop = function () {
+Events.prototype.rainDrop = function () {
   this.resetBoard();
   this.board.addAnt([1,40]);
   this.board.addAnt([1,41]);
@@ -116,7 +116,7 @@ View.prototype.rainDrop = function () {
   this.startBoard();
 };
 
-View.prototype.toggleBorder = function () {
+Events.prototype.toggleBorder = function () {
   if (this.board.cellSize === 10) {
     this.board.cellSize = 11;
     this.board.borderSize = 0;
