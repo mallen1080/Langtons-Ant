@@ -20,7 +20,7 @@ Experience at: [Langton's Ant][link]
 
 [menu]: ./assets/images/menu_ss.png
 [action]: ./assets/images/action_ss.png
-[speed_change]: ./assets/images/speed_change.png
+[speed_change]: ./assets/images/change_speed.png
 
 ### Speed change
 
