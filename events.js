@@ -53,6 +53,7 @@ Events.prototype.startBoard = function () {
       this.board.step.bind(this.board),
       1000 / this.board.speed);
     this.board.active = true;
+    this.$start.attr("id", "selected");
   }
 };
 
@@ -60,6 +61,7 @@ Events.prototype.pauseBoard = function () {
   if (this.board.active) {
     window.clearInterval(this.start);
     this.board.active = false;
+    this.$start.attr("id", "start");
   }
 };
 
@@ -70,11 +72,13 @@ Events.prototype.resetBoard = function () {
   this.board.stepCount = 0;
   this.board.generateGrid();
   this.board.draw();
+  this.$start.attr("id", "start");
 };
 
 Events.prototype.stepBoard = function () {
  this.pauseBoard();
  this.board.step();
+ this.$start.attr("id", "start");
 };
 
 Events.prototype.randomAnt = function () {
