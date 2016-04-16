@@ -8,7 +8,7 @@ Experience at: [Langton's Ant][link]
 [link]: http://mallen1080.github.io/Langtons-Ant/
 
 
-### Technologies Used
+### Uses
 - Javascript
 - HTML Canvas
 
