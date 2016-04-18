@@ -26,4 +26,15 @@ Experience at: [Langton's Ant][link]
 
 Input from speed slider is remapped so that the speed visualization is a better representation of its position on the slider.
 
-![speed_change]
+<!-- ![speed_change] -->
+
+```javascript
+Events.prototype.changeSpeed = function (e) {
+  this.board.speed = Math.pow(1000, e.target.value / 1000);
+  var prevState = this.board.active;
+  if (prevState) {
+    this.pauseBoard();
+    this.startBoard();
+  }
+};
+```
