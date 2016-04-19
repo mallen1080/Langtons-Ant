@@ -31,12 +31,16 @@ The right end of the slider is mapped to run a step 100 times per second
 
 ```javascript
 Events.prototype.changeSpeed = function (e) {
-  this.board.speed = Math.pow(1000, e.target.value / 1000);
+  this.setSpeed(e.target.value);
   var prevState = this.board.active;
   if (prevState) {
     this.pauseBoard();
     this.startBoard();
   }
+};
+
+Events.prototype.setSpeed = function (speed) {
+  this.board.speed = (1000 / Math.pow(1000, speed / 1000)) + 20;
 };
 ```
 
