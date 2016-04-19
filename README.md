@@ -31,11 +31,12 @@ running a single board step every (1000 / speedInput) milliseconds. This lead to
 right bound.
 
 This posed 2 problems:
-1. It was calculated that the average and maximum amount of time it took to
+
+Markup : 1. It was calculated that the average and maximum amount of time it took to
 run a board step was 15.4ms and 19ms respectively.  This caused a backup of
 steps whenever the speed exceeded 50 steps / second, which accounted for 19/20ths
 of the slider.
-2. The linear model led to a poor visual representation of the position of the slider.  
+          2. The linear model led to a poor visual representation of the position of the slider.  
 On the left bound, an increase of 100 from the input changed the speed from 1 step / second
 to 100 steps / second, which caused a large visual change.  On the right bound, a decrease of 100
 changed the speed from 1000 steps / second to 900 steps / second, which was seen as negligent.  
