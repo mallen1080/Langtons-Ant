@@ -20,13 +20,14 @@ Experience at: [Langton's Ant][link]
 
 [menu]: ./assets/images/menu_ss.png
 [action]: ./assets/images/action_ss.png
-[speed_change]: ./assets/images/change_speed.png
 
 ### Speed change
 
 Input from speed slider is remapped so that the speed visualization is a better representation of its position on the slider.
 
-<!-- ![speed_change] -->
+The left end of the slider is mapped to run a step once per second
+The right end of the slider is mapped to run a step 100 times per second
+
 
 ```javascript
 Events.prototype.changeSpeed = function (e) {
@@ -38,3 +39,6 @@ Events.prototype.changeSpeed = function (e) {
   }
 };
 ```
+
+### Future Work
+[ ] Ability to add new rows to the grid
