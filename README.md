@@ -58,7 +58,10 @@ Events.prototype.setSpeed = function (speed) {
 };
 ```
 
-
+By using Math.pow with a base of 1000, the map is changed from a linear model to an
+exponential one where changes on both end of the spectrum are more fitting visually.
+By adding 20 at the end, it ensures that a step cannot run any faster than every 20ms
+on the right bound, and has a negligent difference on the left bound.
 
 ### Future Work
-[ ] Ability to add new rows to the grid
+- [ ] Ability to add new rows to the grid
