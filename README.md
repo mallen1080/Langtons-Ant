@@ -39,7 +39,7 @@ of the slider.
 2. The linear model led to a poor visual representation of the position of the slider.  
 On the left bound, an increase of 100 from the input changed the speed from 1 step / second
 to 100 steps / second, which caused a large visual change.  On the right bound, a decrease of 100
-changed the speed from 1000 steps / second to 900 steps / second, which was seen as negligent.  
+changed the speed from 1000 steps / second to 900 steps / second, which was seen as negligible.  
 
 Both of these problems were solved with the setSpeed function below.
 
@@ -61,7 +61,7 @@ Events.prototype.setSpeed = function (speed) {
 By using Math.pow with a base of 1000, the map is changed from a linear model to an
 exponential one where changes on both end of the spectrum are more fitting visually.
 By adding 20 at the end, it ensures that a step cannot run any faster than every 20ms
-on the right bound, and has a negligent difference on the left bound.
+on the right bound, and has a negligible difference on the left bound.
 
 ### Future Work
 - [ ] Ability to add new rows to the grid
