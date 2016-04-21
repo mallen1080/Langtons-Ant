@@ -5,15 +5,13 @@
     <title>Langton's Ant</title>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/ants.css">
+    <script src="./lib/DOMcrafter.js"></script>
   </head>
 
   <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
     <script src="./lib/ant.js"></script>
     <script src="./lib/board.js"></script>
     <script src="./lib/events.js"></script>
-
     <div class="main">
       <div class="heading">
         <h1>Langton's Ant</h1>
@@ -76,8 +74,8 @@
       </div>
     </div>
     <script>
-      $(function () {
-        var canvas = $("#canvas")[0];
+      $d(function () {
+        var canvas = $d("#canvas").bracket(0);
         var ctx = canvas.getContext("2d");
         canvas.width = 880;
         canvas.height = 550;
