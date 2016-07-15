@@ -5,13 +5,9 @@
     <title>Langton's Ant</title>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/ants.css">
-    <script src="./lib/DOMcrafter.js"></script>
   </head>
 
   <body>
-    <script src="./lib/ant.js"></script>
-    <script src="./lib/board.js"></script>
-    <script src="./lib/events.js"></script>
     <div class="main">
       <div class="heading">
         <h1>Langton's Ant</h1>
@@ -73,6 +69,11 @@
         <canvas id="canvas"></canvas>
       </div>
     </div>
+    
+    <script src="./lib/DOMcrafter.js"></script>
+    <script src="./lib/ant.js"></script>
+    <script src="./lib/board.js"></script>
+    <script src="./lib/events.js"></script>
     <script>
       $d(function () {
         var canvas = $d("#canvas").bracket(0);
